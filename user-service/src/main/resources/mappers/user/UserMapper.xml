@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smile.userservice.query.mapper.UserMapper">
+
+<!--    <select id="findUserById" resultType="UserDTO">-->
+<!--        SELECT * FROM users WHERE user_id = #{userId}-->
+<!--    </select>-->
+
+    <resultMap id="UserDTOMap" type="com.smile.userservice.query.dto.UserDTO">
+        <result property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="age" column="age"/>
+        <result property="gender" column="gender"/>
+        <result property="role" column="role"/>
+    </resultMap>
+
+    <select id="findUserById" resultMap="UserDTOMap">
+        SELECT user_id, user_name, age, gender, role
+        FROM users
+        WHERE user_id = #{userId}
+    </select>
+
+    <update id="updateUserById">
+        UPDATE users
+            <set>
+                <if test="userId != null">
+                    user_id = #{userId},
+                </if>
+                <if test="userPwd != null">
+                    user_pwd = #{userPwd},
+                </if>
+                <if test="userName != null">
+                    user_name = #{userName},
+                </if>
+                <if test="age != null">
+                    age = #{age},
+                </if>
+                <if test="gender != null">
+                    gender = #{gender},
+                </if>
+                <if test="role != null">
+                    role = #{role},
+                </if>
+            </set>
+        WHERE user_id = #{userId}
+    </update>
+
+    <delete id="deleteUserById">
+        DELETE FROM users WHERE user_id = #{userId}
+    </delete>
+
+</mapper>

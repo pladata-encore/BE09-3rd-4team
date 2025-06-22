@@ -1,0 +1,10 @@
+rootProject.name = 'BE09-3rd-4team'
+
+include 'config-service'
+include 'discovery-service'
+include 'gateway-service'
+include 'movie-service'
+include 'recommend-service'
+include 'review-service'
+include 'search-service'
+include 'user-service'

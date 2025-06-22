@@ -1,0 +1,53 @@
+server:
+  port: 8000
+
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/api/v1/user-service/**
+          filters:
+            - RewritePath=/api/v1/user-service/(?<segment>.*), /$\{segment}
+
+        - id: movie-service
+          uri: lb://MOVIE-SERVICE
+          predicates:
+            - Path=/api/v1/movie-service/**
+          filters:
+            - RewritePath=/api/v1/movie-service/(?<segment>.*), /$\{segment}
+
+        - id: review-service
+          uri: lb://REVIEW-SERVICE
+          predicates:
+            - Path=/api/v1/review-service/**
+          filters:
+            - RewritePath=/api/v1/review-service/(?<segment>.*), /$\{segment}
+
+        - id: search-service
+          uri: lb://SEARCH-SERVICE
+          predicates:
+            - Path=/api/v1/search-service/**
+          filters:
+            - RewritePath=/api/v1/search-service/(?<segment>.*), /$\{segment}
+
+        - id: recommend-service
+          uri: lb://RECOMMEND-SERVICE
+          predicates:
+            - Path=/api/v1/recommend-service/**
+          filters:
+            - RewritePath=/api/v1/recommend-service/(?<segment>.*), /$\{segment}
+  config:
+    import:
+      - classpath:/bootstrap.yml
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
