@@ -1,4 +1,4 @@
-# 💻 1. 프로젝트 기획서
+# 💻 1. 기획서
 
 ## 📄 1-1. 프로젝트 개요
 - **프로젝트명 : 네플릭스마일😊**
@@ -59,7 +59,7 @@
 
 ---
 
-# 📚 2. 영화 서비스 요구사항 정의서
+# 📚 2. 요구사항정의서
 
 ## 📜 2-1. 프로젝트 개요
 - **목표**: 사용자가 영화 정보(목록, 상세, 리뷰, 추천 등)를 쉽고 다양하게 조회·활용할 수 있는 온라인 영화 정보 서비스 구현
@@ -98,7 +98,7 @@
 # 📌 3. 세부 기능 설명
 - [**`인터페이스 설계서`**](https://docs.google.com/spreadsheets/d/1vXpqbwAFqt-8OEMkC5BYyRehNwXNjVeQRfF6j5qr_C0/edit?gid=0#gid=0)
 - [**`테스트 케이스`**](https://tremendous-argon-807.notion.site/22a0b0cfd7f7808698acc38f5689911b?v=22a0b0cfd7f781e39c52000ca6d7327b&source=copy_link)
-- [**`테스트 케이스 결과서`**](https://tremendous-argon-807.notion.site/22a0b0cfd7f78008b642e50088303438?v=22a0b0cfd7f78196b6be000ce04c713f&source=copy_link)
+- [**`테스트 결과서`**](https://tremendous-argon-807.notion.site/22a0b0cfd7f78008b642e50088303438?v=22a0b0cfd7f78196b6be000ce04c713f&source=copy_link)
 - [**`이벤트 스토밍`**](https://miro.com/app/board/uXjVIpB-qR4=/)
 ---
 
